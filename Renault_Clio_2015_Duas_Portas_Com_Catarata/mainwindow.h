@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMutex>
 #include <QMainWindow>
+#include <QMutex>
 #include "trem.h"
 
 namespace Ui {
@@ -14,17 +14,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
 public slots:
-    void updateInterface(int,int,int);
+    void updateInterface(int id, int x, int y);
 
 private:
     Ui::MainWindow *ui;
-    QMutex mutex[9];
-    //Cria os objetos TREM's
+
+    QMutex mutexes[9];
+
     Trem *tremA;
     Trem *tremB;
     Trem *tremC;
